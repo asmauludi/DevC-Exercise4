@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Day 3 - Swapi</title>
+    <script type="text/javascript" src="assets/day3.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https:getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="assets/carousel.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Ahmad S Mauludi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="latihan1.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Day2_Kalkulator.html">Kalkulator App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="day3.html">SWAPI</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="input-group mb-3 col-md-6">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Search</span>
+        </div>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" onkeyup="search()" id="myValue">
+    </div>
+    <div class="container-fluid">
+        <table class="table thead-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Rotation Period</th>
+                    <th scope="col">Orbital Period</th>
+                    <th scope="col">Diameter</th>
+                    <th scope="col">Climate</th>
+                    <th scope="col">Gravity</th>
+                    <th scope="col">Terrain</th>
+                    <th scope="col">Surface Water</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Edited</th>
+                    <th scope="col">url</th>
+                    <th scope="col">Films</th>
+                    <th scope="col">Residents</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <script type="text/javascript">
+                    var i;
+                    var myTR;
+                    for (i = 0; i < swapiTable.results.length; i++) {
+                        myTR = "<tr>";
+                        myTR += "<td>" + swapiTable.results[i].name + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].rotation_period + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].orbital_period + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].diameter + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].climate + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].gravity + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].terrain + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].surface_water + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].population + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].created + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].edited + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].url + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].films + "</td>";
+                        myTR += "<td>" + swapiTable.results[i].residents + "</td>";
+
+                        myTR += "</tr>";
+                        document.write(myTR);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        function search() {
+            var input, filter, tr, td, i, j, txtValue, tdValue;
+            input = document.getElementById("myValue");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i];
+                console.log(td)
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

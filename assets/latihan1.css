@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    background: #333;
+    font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4{
+    margin: 0;
+}
+.clear{
+    clear: both;
+}
+.hr{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: right;
+    margin: 20px 30px;
+}
+.hr img{
+    width: 100%;
+}
+.hl{
+    float: left;
+    margin: 20px 30px;
+}
+.hl h1{
+    margin: 15px 0 5px 0;
+    font-size: 40px;
+}
+.paper{
+    width: 1100px;
+    background: #dedede;
+    margin: 0 auto;
+}
+.wrapper{
+    width: 1050px;
+    margin: 0 auto;
+}
+.header{
+    width: 100%;
+    background: #aaa;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.box-3{
+    margin: 15px;
+    border-radius: 10px;
+    float: left;
+    overflow: hidden;
+}
+.no-marg{
+    margin: 15px 0;
+}
+.h-box{
+    text-align: center;
+    background: #ccc;
+    width: 300px;
+    padding: 15px;
+}
+.b-box{
+    width: 300px;
+    padding: 15px;
+    background: #aaa;
+}
+.b-box ul li{
+    padding: 5px;
+}
+.f-box{
+    text-align: center;
+    background: #ccc;
+    width: 300px;
+    padding: 15px;
+}
+.footer{
+    width: 100%;
+    padding: 30px 0;
+    background: #aaa;
+}
+.footer img{
+    margin: 0 auto;
+    display: table;
+}
